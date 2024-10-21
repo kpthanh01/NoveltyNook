@@ -27,7 +27,7 @@ const getUserByEmail = async (req, res) => {
 const createUser = async (req, res) => {
   try {
     let newUser = await new User(req.body)
-    await newUser.save
+    await newUser.save()
     return res.status(201).json({ newUser })
   } catch (error) {
     return res.status(500).send(error.message)
