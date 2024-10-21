@@ -3,6 +3,7 @@ const { Author } = require('../models')
 const getAllAuthor = async (req, res) => {
   try {
     const author = await Author.find({})
+    res.json(author)
   } catch (error) {
     return res.status(500).send(error.message)
   }

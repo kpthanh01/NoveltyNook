@@ -22,7 +22,7 @@ app.get('/', (req,res) => {
   res.send('This is the root for novelty nooks')
 })
 
-app.get('/user/', userController.getAllUsers)
+app.get('/user', userController.getAllUsers)
 app.get('/user/:email', userController.getUserByEmail)
 app.post('/user', userController.createUser)
 app.put('/user/:id', userController.updateUser)

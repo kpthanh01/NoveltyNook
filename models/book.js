@@ -13,6 +13,7 @@ const Book = new Schema(
     format: { type: String, required: true },
     price: { type: Number, required: true },
     category: { type: [String], required: true },
+    best_seller: { type: Boolean, required: false },
     author_id: { type: [Schema.Types.ObjectId], required: false }
   },
   { timestamps: true }

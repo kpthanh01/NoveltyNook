@@ -3,6 +3,7 @@ const { Book } = require('../models')
 const getAllBook = async (req, res) => {
   try {
     const book = await Book.find({})
+    res.json(book)
   } catch (error) {
     return res.status(500).send(error.message)
   }

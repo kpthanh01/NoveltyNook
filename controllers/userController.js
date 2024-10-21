@@ -3,6 +3,7 @@ const { User } = require('../models')
 const getAllUsers = async (req, res) => {
   try {
     const users = await User.find({})
+    res.json(users)
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -10,7 +11,7 @@ const getAllUsers = async (req, res) => {
 
 const getUserByEmail = async (req, res) => {
   try {
-    const { email } = req.params.email
+    const { email } = req.params
     const user = await User.find({ email: email })
     if (user) {
       return res.json(user)
