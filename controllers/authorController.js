@@ -11,7 +11,7 @@ const getAllAuthor = async (req, res) => {
 
 const getAuthorById = async (req, res) => {
   try {
-    const { id } = req.params.id
+    const { id } = req.params
     const author = await Author.findById(id)
     if (author) {
       return res.json(author)
@@ -37,7 +37,7 @@ const createAuthor = async (req, res) => {
 
 const updateAuthor = async (req, res) => {
   try {
-    const { id } = req.params.id
+    const { id } = req.params
     const updateAuthor = await Author.findByIdAndUpdate(id, req.body, { new: true })
     if (updateAuthor) {
       return res.status(200).json(updateAuthor)
@@ -50,7 +50,7 @@ const updateAuthor = async (req, res) => {
 
 const deleteAuthor = async (req, res) => {
   try {
-    const { id } = req.params.id
+    const { id } = req.params
     const deleteAuthor = await Author.findByIdAndDelete(id)
     if (deleteAuthor) {
       return res.status(200).send('Author deleted')

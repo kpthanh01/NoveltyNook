@@ -21,7 +21,7 @@ const createLibrary = async (req, res) => {
 
 const updateLibrary = async (req, res) => {
   try {
-    const { id } = req.params.id
+    const { id } = req.params
     const updateLibrary = await Library.findByIdAndUpdate(id, req.body, { new: true })
     if (updateLibrary) {
       return res.status(200).json(updateLibrary)
@@ -34,7 +34,7 @@ const updateLibrary = async (req, res) => {
 
 const deleteLibrary = async (req, res) => {
   try {
-    const { id } = req.params.id
+    const { id } = req.params
     const deleteLibrary = await Library.findByIdAndDelete(id)
     if (deleteLibrary) {
       return res.status(200).send('Library deleted')

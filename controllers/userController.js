@@ -37,7 +37,7 @@ const createUser = async (req, res) => {
 
 const updateUser = async (req, res) => {
   try {
-    const { id } = req.params.id
+    const { id } = req.params
     const updateUser = await User.findByIdAndUpdate(id, req.body, { new: true })
     if (updateUser) {
       return res.status(200).json(updateUser)
@@ -50,7 +50,7 @@ const updateUser = async (req, res) => {
 
 const deleteUser = async (req, res) => {
   try {
-    const { id } = req.params.id
+    const { id } = req.params
     const deleteUser = await User.findByIdAndDelete(id)
     if(deleteUser) {
       return res.status(200).send('User deleted')

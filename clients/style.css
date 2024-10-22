@@ -1,0 +1,61 @@
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+div,
+span,
+button,
+a,
+ul,
+li,
+ol,
+img,
+nav {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-belt {
+  background-color: lightslategray;
+}
+
+.nav-main {
+ background-color: bisque;
+
+  li {
+    margin-right: 2em;
+  }
+}
+
+#myAccount {
+  display: none;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+.carousel-item-container {
+  display: flex;
+  justify-content: center;
+}
+
+.events {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer {
+  height: 5em;
+  background-color: grey;
+}
+
+.grey {
+  background-color: grey;
+}

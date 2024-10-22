@@ -1,0 +1,23 @@
+main {
+  padding: 2em 10em;
+}
+
+.genre {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.book-container {
+  display: flex;
+  margin-bottom: 30px;
+
+  .book-cover {
+    width: 8em;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 4em;
+}

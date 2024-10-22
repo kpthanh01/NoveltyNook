@@ -11,7 +11,8 @@ const getAllBook = async (req, res) => {
 
 const getBookById = async (req, res) => {
   try {
-    const { id } = req.params.id
+    const { id } = req.params
+    console.log(id)
     const book = await Book.findById(id)
     if (book) {
       return res.json(book)
@@ -37,7 +38,7 @@ const createBook = async (req, res) => {
 
 const updateBook = async (req, res) => {
   try {
-    const { id } = req.params.id
+    const { id } = req.params
     const updateBook = await Book.findByIdAndUpdate(id, req.body, { new: true })
     if (updateBook) {
       return res.status(200).json(updateBook)
@@ -50,7 +51,7 @@ const updateBook = async (req, res) => {
 
 const deleteBook = async (req, res) => {
   try {
-    const { id } = req.params.id
+    const { id } = req.params
     const deleteBook = await Book.findByIdAndDelete(id)
     if (deleteBook) {
       return res.status(200).send('Book deleted')
