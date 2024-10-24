@@ -5,19 +5,14 @@ const loginBtn = document.querySelector('#loginBtn')
 const myAccount = document.querySelector('#myAccount')
 
 const loadPage = async () => {
-  const id = sessionStorage.getItem('id')
-  const name = sessionStorage.getItem('name')
-  if(name) {
-    console.log('user exist')
+  const userId = sessionStorage.getItem('id')
+  if(userId) {
     loginBtn.style.display = 'none'
     myAccount.style.display = 'block'
   }
-}
 
-const getBooks = async () => {
   let response = await axios.get('http://localhost:3001/books')
   let data = response.data
-  console.log(data)
 
   data.forEach(element => {
     let containerBook = document.createElement('div')
@@ -44,6 +39,4 @@ const openAccountPage = () => {
   window.location.href = './accounts/userAccount.html'
 }
 
-
 loadPage()
-getBooks()

@@ -1,0 +1,66 @@
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5em;
+}
+
+.account-options {
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  width: 5em;
+  margin-right: 2em;
+  text-align: center;
+  padding-top: 2em;
+  font-size: 20px;
+  border-right: solid 3px black;
+}
+
+.account-options b {
+  margin-bottom: 4em;
+}
+
+.profile-container {
+  background-color: paleturquoise;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 2.5em;
+  font-size: 23px;
+  border: solid 2px black;
+}
+
+.library-container {
+  display: none;
+}
+
+label {
+  display: block !important;
+}
+
+.profile-labels label,
+.profile-inputs p {
+  margin-bottom: 2em;
+}
+
+.profile-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.profile-input {
+  display: none;
+  margin-bottom: 1.8em;
+}
+
+#profile-edit, #profile-save {
+  width: 5em;
+  margin: auto;
+  font-size: 20px;
+  padding: 8px;
+}
+
+#profile-save {
+  display: none;
+}

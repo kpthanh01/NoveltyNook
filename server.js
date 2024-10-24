@@ -22,21 +22,15 @@ app.get('/', (req,res) => {
   res.send('This is the root for novelty nooks')
 })
 
-app.get('/test', (req, res) => {
-  console.log(req.query)
-  res.send('hello')
-})
-
 app.get('/users', userController.getAllUsers)
-// app.get('/users/:id', userController.getUserById)
 app.get('/users/login', userController.getUserByEmailPassword)
 app.post('/users', userController.createUser)
 app.put('/users/:id', userController.updateUser)
 app.delete('/users/:id', userController.deleteUser)
 
-app.get('/library', libraryController.getLibrary)
+app.get('/library/:userId', libraryController.getLibraryByUserId)
 app.post('/library', libraryController.createLibrary)
-app.put('/library/:id', libraryController.updateLibrary)
+app.put('/library/:userId', libraryController.updateLibrary)
 app.delete('/library/:id', libraryController.deleteLibrary)
 
 app.get('/books', bookController.getAllBook)

@@ -1,20 +1,24 @@
 const bookList = document.querySelector('#bookList')
+const loginBtn = document.querySelector('#loginBtn')
+const myAccount = document.querySelector('#myAccount')
 
-const getBooks = async () => {
+const loadPage = async () => {
+  const userId = sessionStorage.getItem('id')
+  if(userId) {
+    loginBtn.style.display = 'none'
+    myAccount.style.display = 'block'
+  }
+
   let response = await axios.get('http://localhost:3001/books')
   let data = response.data
-  console.log(data)
 
-  data.forEach( async element => {
+  data.forEach(async element => {
     let containerBook = document.createElement('div')
     let author = await axios.get(`http://localhost:3001/authors/${element.author_id}`)
-    console.log(author.data)
-    containerBook.setAttribute('onclick', 'clickBook(this)')
-    containerBook.setAttribute('data-bookid', `${element._id}`)
     containerBook.setAttribute('class', 'container-fluid book-container')
     containerBook.innerHTML = `
       <div>
-        <img class="book-cover" src="${element.image}" alt="">
+        <img class="book-cover" src="${element.image}" alt="" data-bookid="${element._id}" onclick="clickBook(this)">
       </div>
       <div>
         <h4>${element.title}</h4>
@@ -25,18 +29,24 @@ const getBooks = async () => {
             <span>Format: ${element.format}</span>
             <span>Price: ${element.price}</span>
           </div>
-          <button class="btn btn-primary">Add Library</button>
-          <a href="../books/book.html">Test</a>
         </div>
       </div>`
-      bookList.appendChild(containerBook)
+    bookList.appendChild(containerBook)
   })
 }
 
 const clickBook = (event) => {
   let data = event.getAttribute('data-bookid')
   sessionStorage.setItem('bookId', data)
-  window.location.href = './book.html'
+  window.location.href = '../books/book.html'
 }
 
-getBooks()
+const openLoginPage = () => {
+  window.location.href = '../login/login.html'
+}
+
+const openAccountPage = () => {
+  window.location.href = '../accounts/userAccount.html'
+}
+
+loadPage()

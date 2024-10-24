@@ -12,7 +12,6 @@ const getAllBook = async (req, res) => {
 const getBookById = async (req, res) => {
   try {
     const { id } = req.params
-    console.log(id)
     const book = await Book.findById(id)
     if (book) {
       return res.json(book)

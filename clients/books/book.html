@@ -19,14 +19,14 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="../index.html">Logo</a>
         <div>
-          <button id="login" class="btn btn-primary" type="button">Login</button>
-          <button id="myAccount" class="btn btn-primary" type="button">My Account</button>
+          <button id="loginBtn" class="btn btn-primary" type="button" onclick="openLoginPage()">Login</button>
+          <button id="myAccount" class="btn btn-primary" type="button" onclick="openAccountPage()">My Account</button>
         </div>
       </div>
     </nav>
     <nav class="nav-main navbar navbar-expand-lg">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="../books/bookList.html" data-tab="book">Book</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../bookLists/bookList.html" data-tab="book">Book</a></li>
         <li class="nav-item"><a class="nav-link active" href="#" data-tab="fiction">Fiction</a></li>
         <li class="nav-item"><a class="nav-link active" href="#" data-tab="nonfiction">NonFiction</a></li>
         <li class="nav-item"><a class="nav-link active" href="#" data-tab="romance">Romance</a></li>
@@ -48,7 +48,7 @@
             <p>Format: <span id="format"></span></p>
             <p>Price: $<span id="price"></span></p>
           </div>
-          <button class="btn btn-primary">Add Library</button>
+          <button class="btn btn-primary" onclick="addToLibrary()">Add Library</button>
         </div>
       </div>
     </div>
