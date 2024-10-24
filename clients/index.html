@@ -17,22 +17,21 @@
   <header>
     <nav class="nav-belt navbar">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Navbar</a>
+        <a class="navbar-brand" href="index.html">Logo</a>
         <div>
-          <button id="login" class="btn btn-primary" type="button">Login</button>
-          <button id="myAccount" class="btn btn-primary" type="button">My Account</button>
+          <button id="loginBtn" class="btn btn-primary" type="button" onclick="openLoginPage()">Login</button>
+          <button id="myAccount" class="btn btn-primary" type="button" onclick="openAccountPage()">My Account</button>
         </div>
       </div>
     </nav>
     <nav class="nav-main navbar navbar-expand-lg">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="./books/bookList.html">Book</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">Fiction</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">NonFiction</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">Romance</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">Mystery</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">Business</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#">Audiobooks</a></li>
+        <li class="nav-item"><a class="nav-link active" href="./books/bookList.html" data-tab="book">Book</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#" data-tab="fiction">Fiction</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#" data-tab="nonfiction">NonFiction</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#" data-tab="romance">Romance</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#" data-tab="mystery">Mystery</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#" data-tab="business">Business</a></li>
       </ul>
     </nav>
   </header>

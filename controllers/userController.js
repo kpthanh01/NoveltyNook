@@ -9,10 +9,26 @@ const getAllUsers = async (req, res) => {
   }
 }
 
-const getUserByEmail = async (req, res) => {
+const getUserById = async (req, res) => {
   try {
-    const { email } = req.params
-    const user = await User.find({ email: email })
+    const { id } = req.params
+    const user = await User.findById(id)
+    if (user) {
+      return res.json(user)
+    }
+    return res.status(404).send('User with this email does not exist')
+  } catch (error) {
+    if (error.name === 'CastError' && error.kind === 'ObjectId') {
+      return res.status(404).send('This user does not exist')
+    }
+    return res.status(500).send(error.message)
+  }
+}
+
+const getUserByEmailPassword = async (req, res) => {
+  try {
+    const { email, password } = req.query
+    const user = await User.findOne({ email: email, password: password })
     if (user) {
       return res.json(user)
     }
@@ -63,7 +79,8 @@ const deleteUser = async (req, res) => {
 
 module.exports = {
   getAllUsers,
-  getUserByEmail,
+  getUserById,
+  getUserByEmailPassword,
   createUser,
   updateUser,
   deleteUser
