@@ -35,6 +35,7 @@ app.delete('/library/:id', libraryController.deleteLibrary)
 
 app.get('/books', bookController.getAllBook)
 app.get('/books/:id', bookController.getBookById)
+app.get('/books/category/:tab', bookController.getBookByCategory)
 app.post('/books', bookController.createBook)
 app.put('/books/:id', bookController.updateBook)
 app.delete('/books/:id', bookController.deleteBook)

@@ -25,6 +25,22 @@ const getBookById = async (req, res) => {
   }
 }
 
+const getBookByCategory = async (req, res) => {
+  try {
+    const { tab } = req.params
+    const book = await Book.find({category: {$in: [tab]}})
+    if (book) {
+      return res.json(book)
+    }
+    return res.status(404).send('Book with this id does not exist')
+  } catch (error) {
+    if (error.name === 'CastError' && error.kind === 'ObjectId') {
+      return res.status(404).send('This Book does not exist')
+    }
+    return res.status(500).send(error.message)
+  }
+}
+
 const createBook = async (req, res) => {
   try {
     const newBook = await new Book(req.body)
@@ -64,6 +80,7 @@ const deleteBook = async (req, res) => {
 module.exports = {
   getAllBook,
   getBookById,
+  getBookByCategory,
   createBook,
   updateBook,
   deleteBook
