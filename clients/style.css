@@ -18,14 +18,23 @@ nav {
 }
 
 .nav-belt {
-  background-color: lightslategray;
+  background-color: #5d8e64;
 }
 
 .nav-main {
- background-color: bisque;
+  margin-bottom: 2em;
+}
 
+.navbar-nav {
+  width: 100%;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid grey;
   li {
     margin-right: 2em;
+  }
+
+  li:hover {
+    text-decoration: underline;
   }
 }
 
@@ -35,27 +44,76 @@ nav {
 
 .welcome {
   text-align: center;
+
+  img {
+    width: 100%;
+  }
 }
 
-.carousel-item {
-  text-align: center;
-}
+.seller {
+  margin-top: 3em;
 
-.carousel-item-container {
-  display: flex;
-  justify-content: space-evenly;
+  h2 {
+    text-decoration: underline;
+  }
 }
 
 .events {
+  h2 {
+    margin-top: 1em;
+    margin-bottom: 3rem;
+    text-decoration: underline;
+  }
+
+}
+
+.event-list {
   display: flex;
   justify-content: space-around;
 }
 
-footer {
-  height: 5em;
-  background-color: grey;
+.event-image {
+  height: 10rem;
 }
 
-.grey {
-  background-color: grey;
+.carousel {
+  color: black;
+}
+
+.carousel-item {
+  text-align: center;
+
+  #section1, #section2, #section3{
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.book-item {
+  width: 10rem;
+
+  img {
+    height: 18em;
+  }
+}
+
+footer {
+  height: 5em;
+
+  div {
+    border-top: 1px solid grey;
+    width: 95%;
+    margin: 5em auto;
+  }
+}
+
+#login {
+  margin-top: 2rem;
+  width: 50rem;
+  border: 2px solid black;
+  padding: 2rem;
+}
+
+#login form {
+  
 }

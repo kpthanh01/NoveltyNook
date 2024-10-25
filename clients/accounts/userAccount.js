@@ -1,5 +1,6 @@
 const profile = document.querySelector('#profile')
 const library = document.querySelector('#library')
+const libraryList = document.querySelector('#libraryList')
 
 const userName = document.querySelector('#nameText')
 const userAddress = document.querySelector('#addressText')
@@ -96,10 +97,9 @@ const populateLibrary = async () => {
     let getBook = await axios.get(`http://localhost:3001/books/${books[i]}`)
     console.log(getBook.data)
     let bookCard = document.createElement('div')
-    bookCard.setAttribute('class', 'card')
-    bookCard.setAttribute('style', 'width: 18rem')
+    bookCard.setAttribute('class', 'card library-item')
     bookCard.innerHTML = `<img src="${getBook.data.image}" class="card-img-top" alt="">`
-    library.appendChild(bookCard)
+    libraryList.appendChild(bookCard)
   }
 }
 

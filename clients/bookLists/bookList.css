@@ -10,10 +10,24 @@ main {
 .book-container {
   display: flex;
   margin-bottom: 30px;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid grey;
 
   .book-cover {
     width: 8em;
   }
+
+  .book-cover:hover {
+    cursor: pointer;
+    color: #111;
+    background: #5d8e64;
+    box-shadow: 0 0 20px #5d8e64;
+  }
+}
+
+.book-info {
+  width: 45em;
 }
 
 .pagination {

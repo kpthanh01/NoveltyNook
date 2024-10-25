@@ -2,11 +2,10 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 5em;
+  padding: 1em 5em;
 }
 
 .account-options {
-  background-color: bisque;
   display: flex;
   flex-direction: column;
   width: 5em;
@@ -27,7 +26,6 @@ b:hover {
 }
 
 .profile-container {
-  background-color: paleturquoise;
   display: flex;
   flex-direction: column;
   width: 60%;
@@ -37,14 +35,19 @@ b:hover {
 }
 
 .library-container {
-  background-color: paleturquoise;
+  display: none;
   width: 60%;
-  padding: 2.5em;
+  padding: 3em;
   border: solid 2px black;
+  text-align: center;
+
+  h3 {
+    margin-bottom: 2em;
+  }
 }
 
-.library-container {
-  display: none;
+.library-item img{
+  height: 15rem;
 }
 
 label {
@@ -75,4 +78,16 @@ label {
 
 #profile-save {
   display: none;
+}
+
+.card {
+  width: 10rem;
+}
+
+#libraryList {
+  display: flex;
+
+  .card {
+    margin-right: 2em
+  }
 }

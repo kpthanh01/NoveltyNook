@@ -20,14 +20,15 @@ const loadPage = async () => {
       <div>
         <img class="book-cover" src="${element.image}" alt="" data-bookid="${element._id}" onclick="clickBook(this)">
       </div>
-      <div>
+      <div class="book-info">
         <h4>${element.title}</h4>
         <p>by <span>${author.data.name}</span></p>
         <div>${element.description}</div>
         <div>
           <div>
-            <span>Format: ${element.format}</span>
-            <span>Price: ${element.price}</span>
+            <span><b>Format:</b> ${element.format}</span>
+            <br>
+            <span><b>Price:</b> ${element.price}</span>
           </div>
         </div>
       </div>`

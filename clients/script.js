@@ -16,9 +16,8 @@ const loadPage = async () => {
 
   data.forEach(element => {
     let containerBook = document.createElement('div')
-    containerBook.setAttribute('class', 'card')
+    containerBook.setAttribute('class', 'card book-item')
     containerBook.setAttribute('onclick', 'clickBook(this)')
-    containerBook.setAttribute('style', 'width: 10rem;')
     containerBook.setAttribute('data-bookid', `${element._id}`)
     containerBook.innerHTML = `<img src="${element.image}" class="card-img-top" alt="">`
     carouselList.appendChild(containerBook)

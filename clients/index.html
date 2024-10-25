@@ -24,30 +24,38 @@
         </div>
       </div>
     </nav>
-    <nav class="nav-main navbar navbar-expand-lg">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="./bookLists/bookList.html" data-tab="book">Book</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#" data-tab="fiction">Fiction</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#" data-tab="nonfiction">NonFiction</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#" data-tab="romance">Romance</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#" data-tab="mystery">Mystery</a></li>
-        <li class="nav-item"><a class="nav-link active" href="#" data-tab="business">Business</a></li>
-      </ul>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="./bookLists/bookList.html" data-tab="book">Book</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#" data-tab="fiction">Fiction</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#" data-tab="nonfiction">NonFiction</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#" data-tab="romance">Romance</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#" data-tab="mystery">Mystery</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#" data-tab="business">Business</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
-  <main>
+  <main class="container-fluid">
     <div class="welcome">
-      <img src="https://template.canva.com/EAF7BOrEkGQ/1/0/800w-84ER9m5iC-Q.jpg" alt="welcome">
+      <img src="../assets/noveltyNookHome.jpg" alt="welcome">
     </div>
-    <div>
-      <h4>Best Sellers</h4>
-      <div id="carouselExample" class="carousel slide grey">
+    <div class="seller">
+      <h2>Best Sellers</h2>
+      <div id="carouselMain" class="carousel carousel-dark slide">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <div id="section1" class="carousel-item-container"></div>
+            <div id="section1"></div>
           </div>
           <div class="carousel-item">
-            <div class="carousel-item-container">
+            <div id="section2">
               <div class="card" style="width: 10rem;" data-bookid="123456" onclick="clickBook(this)">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
@@ -57,7 +65,7 @@
             </div>
           </div>
           <div class="carousel-item">
-            <div class="carousel-item-container">
+            <div id="section3">
               <div class="card" style="width: 10rem;">
                 <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
@@ -67,40 +75,43 @@
             </div>
           </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselMain" data-bs-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
     </div>
-    <div>
-      <h4>Events</h4>
-      <div class="container-fluid events">
+    <div class="events">
+      <h2>Events</h2>
+      <div class="event-list">
         <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
+          <img src="../assets/booksigning.jpeg" class="card-img-top event-image" alt="...">
           <div class="card-body">
             <h5 class="card-title">Karl Magus Book Signing</h5>
-            <p class="card-text">Karl Magus author of the Iron Colossus Serious is having a book signing on Noverber 12th at 5pm</p>
+            <p class="card-text">Karl Magus author of the Iron Colossus Serious is having a book signing on Noverber
+              12th at 5pm</p>
             <a href="#" class="btn btn-primary">Book It</a>
           </div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
+          <img src="../assets//BookFair.png" class="card-img-top event-image" alt="...">
           <div class="card-body">
             <h5 class="card-title">Arthur Middle School Book Fair</h5>
-            <p class="card-text">Arthur Middles School is a having their annual book fair. Bring your family and browse through various novels that you and your family will enjoy.</p>
+            <p class="card-text">Arthur Middles School is a having their annual book fair. Bring your family and browse
+              through various novels that you and your family will enjoy.</p>
             <a href="#" class="btn btn-primary">Book It</a>
           </div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
+          <img src="../assets/halloweenbook.jpg" class="card-img-top event-image" alt="...">
           <div class="card-body">
             <h5 class="card-title">Halloween Trick-o-Treat</h5>
-            <p class="card-text">The Forum plaza is having their annual Halloween Celebration. Come and visit the spooky festivities</p>
+            <p class="card-text">The Forum plaza is having their annual Halloween Celebration. Come and visit the spooky
+              festivities</p>
             <a href="#" class="btn btn-primary">Book It</a>
           </div>
         </div>
@@ -108,8 +119,12 @@
 
     </div>
   </main>
-  <footer>
-    <h1>Footer</h1>
+  <footer class="container-fluid">
+    <div class="footer-line">
+      <p class="copy-right">©1997-2024 Novelty Nook <br>33 East 17th
+        Street, New York, NY 10003
+      </p>
+    </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
