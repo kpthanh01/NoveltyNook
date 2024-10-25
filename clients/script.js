@@ -38,4 +38,9 @@ const openAccountPage = () => {
   window.location.href = './accounts/userAccount.html'
 }
 
+const setTabData = (event) => {
+  let category = event.getAttribute('data-tab')
+  sessionStorage.setItem('tab', category)
+}
+
 loadPage()

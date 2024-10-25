@@ -85,15 +85,16 @@ nav {
 
   #section1, #section2, #section3{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
   }
 }
 
 .book-item {
-  width: 10rem;
+  width: 7rem;
+  margin-right: 2rem;
 
   img {
-    height: 18em;
+    height: 12em;
   }
 }
 
@@ -114,6 +115,8 @@ footer {
   padding: 2rem;
 }
 
-#login form {
-  
+@media (min-width: 320px) and (max-width: 768px) {
+  #login {
+    width: 30rem;
+  }
 }

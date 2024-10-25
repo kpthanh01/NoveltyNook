@@ -4,11 +4,16 @@ const myAccount = document.querySelector('#myAccount')
 
 const loadPage = async () => {
   const userId = sessionStorage.getItem('id')
-  if(userId) {
+  const category = sessionStorage.getItem('tab')
+  if (userId) {
     loginBtn.style.display = 'none'
     myAccount.style.display = 'block'
   }
 
+  allBooks()
+}
+
+const allBooks = async () => {
   let response = await axios.get('http://localhost:3001/books')
   let data = response.data
 
@@ -34,6 +39,10 @@ const loadPage = async () => {
       </div>`
     bookList.appendChild(containerBook)
   })
+}
+
+const catergoryBooks = async () => {
+
 }
 
 const clickBook = (event) => {

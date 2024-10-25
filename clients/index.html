@@ -32,12 +32,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" href="./bookLists/bookList.html" data-tab="book">Book</a></li>
-            <li class="nav-item"><a class="nav-link active" href="#" data-tab="fiction">Fiction</a></li>
-            <li class="nav-item"><a class="nav-link active" href="#" data-tab="nonfiction">NonFiction</a></li>
-            <li class="nav-item"><a class="nav-link active" href="#" data-tab="romance">Romance</a></li>
-            <li class="nav-item"><a class="nav-link active" href="#" data-tab="mystery">Mystery</a></li>
-            <li class="nav-item"><a class="nav-link active" href="#" data-tab="business">Business</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./bookLists/bookList.html" data-tab="book" onclick="setTabData(this)">Book</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#" data-tab="fiction" onclick="setTabData(this)">Fiction</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#" data-tab="nonfiction" onclick="setTabData(this)">NonFiction</a></li>
+            <li class="nav-item"><a class="nav-link active" href="./bookLists/bookList.html" data-tab="romance" onclick="setTabData(this)">Romance</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#" data-tab="mystery" onclick="setTabData(this)">Mystery</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#" data-tab="business" onclick="setTabData(this)">Business</a></li>
           </ul>
         </div>
       </div>
@@ -56,21 +56,23 @@
           </div>
           <div class="carousel-item">
             <div id="section2">
-              <div class="card" style="width: 10rem;" data-bookid="123456" onclick="clickBook(this)">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Once Upon A ...</p>
-                </div>
+              <div class="card book-item" data-bookid="123456" onclick="clickBook(this)">
+                <img src="https://m.media-amazon.com/images/I/81DI+BAN2SL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="">
               </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div id="section3">
-              <div class="card" style="width: 10rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <p class="card-text">Harry Potter</p>
-                </div>
+              <div class="card book-item" data-bookid="123456" onclick="clickBook(this)">
+                <img src="https://m.media-amazon.com/images/I/91nGn092e5L._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="">
+              </div>
+              <div class="card book-item" data-bookid="123456" onclick="clickBook(this)">
+                <img src="https://m.media-amazon.com/images/I/91bsqAXT6aL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="">
+              </div>
+              <div class="card book-item" data-bookid="123456" onclick="clickBook(this)">
+                <img src="https://m.media-amazon.com/images/I/81VmW+TvjvL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="">
+              </div>
+              <div class="card book-item" data-bookid="123456" onclick="clickBook(this)">
+                <img src="https://m.media-amazon.com/images/I/91xtfdYARwL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="">
+              </div>
+              <div class="card book-item" data-bookid="123456" onclick="clickBook(this)">
+                <img src="https://m.media-amazon.com/images/I/61mJj5IVRIL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt="">
               </div>
             </div>
           </div>

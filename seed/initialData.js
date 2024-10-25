@@ -4,72 +4,90 @@ const { User, Library, Book, Author } = require('../models')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const main = async () => {
-  // let author1 = new Author({
-  //   name: 'Jim Butcher',
-  //   description: `A martial arts enthusiast whose résumé includes a long list of skills rendered obsolete at least two hundred years ago, #1 New York Times bestselling author Jim Butcher turned to writing as a career because anything else probably would have driven him insane. He lives mostly inside his own head so that he can write down the conversation of his imaginary friends, but his head can generally be found in Independence, Missouri. Jim is the author of the Dresden Files, the Codex Alera novels, and the Cinder Spires series, which began with The Aeronaut’s Windlass.`,
-  //   image: '',
-  // })
+  // let library1 = [{
+  //   user_id: '671653e99f93cdb5711e5fd6',
+  //   books: [],
+  // }]
 
-  // author1.save()
+  // await Library.insertMany(library1)
+  // console.log('Library Created!')
+
+  // let author1 = [
+  //   {
+  //     name: 'Sally Rooney',
+  //     description: `Sally Rooney is an Irish novelist. She is the author of Beautiful World, Where Are You, Conversations with Friends, and Normal People. She also contributed to the writing and production of the Hulu/BBC television adaptation of Normal People.`,
+  //     image: '',
+  //   },
+  //   {
+  //     name: 'Debbie Macomber',
+  //     description: `When Debbie Macomber started out as an author, she was a young, dyslexic mother of four who wrote in her kitchen on a rented typewriter. Years later, she's the bestselling author of dozens of heartwarming novels that celebrate love, laughter, and the bonds of family and friendship. Her Cedar Cove and Blossom Street series include some of her most popular titles, and several of her Christmas books have been turned into Hallmark Channel movies.`,
+  //     image: '',
+  //   },
+  //   {
+  //     name: 'Fawn Weaver',
+  //     description: `When Debbie Macomber started out as an author, she was a young, dyslexic mother of four who wrote in her kitchen on a rented typewriter. Years later, she's the bestselling author of dozens of heartwarming novels that celebrate love, laughter, and the bonds of family and friendship. Her Cedar Cove and Blossom Street series include some of her most popular titles, and several of her Christmas books have been turned into Hallmark Channel movies.`,
+  //     image: '',
+  //   },
+  // ]
+
+  // await Author.insertMany(author1)
   // console.log('Author Created!')
 
-  let book1 = [
-    {
-      title: 'Storm Front',
-      description: `In the first novel in the #1 New York Times bestselling Dresden Files series, Harry Dresden’s investigation of a grisly double murder pulls him into the darkest depths of magical Chicago…`,
-      overview: `In the first novel in the #1 New York Times bestselling Dresden Files series, Harry Dresden’s investigation of a grisly double murder pulls him into the darkest depths of magical Chicago… 
-As a professional wizard, Harry Dresden knows firsthand that the “everyday” world is actually full of strange and magical things—and most of them don’t play well with humans. And those that do enjoy playing with humans far too much. He also knows he’s the best at what he does. Technically, he’s the only at what he does. But even though Harry is the only game in town, business—to put it mildly—stinks. 
-So when the Chicago P.D. bring him in to consult on a double homicide committed with black magic, Harry's seeing dollar signs. But where there's black magic, there's a black mage behind it. And now that mage knows Harry's name... 
-“A great series—fast-paced, vividly realized and with a hero/narrator who’s excellent company.”—Cinescape`,
-      image: '',
-      publisher: 'Penguin Publishing Group',
-      publisher_date: new Date('2000-04-01T00:00:00').toLocaleDateString(),
-      pages: 384,
-      rank: 14208,
-      isbn13: 9780451457813,
-      format: 'paperback',
-      price: 10.99,
-      category: ['nonfiction', 'mystery', 'fantasy'],
-      best_seller: false,
-      author_id: '6715cb61ffe5949e8323fb12'
-    },
-    {
-      title: 'Once Upon a Broken Heart',
-      description: `ONCE UPON A BROKEN HEART marks the launch of a new series from Stephanie Garber about love, curses, and the lengths that people will go to for happily ever after`,
-      overview: `For as long as she can remember, Evangeline Fox has believed in true love and happy endings . . . until she learns that the love of her life will marry another. 
-Desperate to stop the wedding and to heal her wounded heart, Evangeline strikes a deal with the charismatic, but wicked, Prince of Hearts. In exchange for his help, he asks for three kisses, to be given at the time and place of his choosing. 
-But after Evangeline’s first promised kiss, she learns that bargaining with an immortal is a dangerous game — and that the Prince of Hearts wants far more from her than she’d pledged. He has plans for Evangeline, plans that will either end in the greatest happily ever after, or the most exquisite tragedy.`,
-      image: '',
-      publisher: 'Flatiron Books',
-      publisher_date: new Date('2023-03-28T00:00:00').toLocaleDateString(),
-      pages: 432,
-      rank: 750,
-      isbn13: 9781250268402,
-      format: 'paperback',
-      price: 12.99,
-      category: ['nonfiction', 'romance', 'fantasy'],
-      best_seller: true,
-      author_id: '6716560a9f93cdb5711e5fdd'
-    },
-    {
-      title: 'Sandwich',
-      description: `Pushed and pulled between her parents and her children, a woman faces her past and her future, in a story about the ins and outs and joy of life. Think Vintage Contemporaries by Dan Kois or anything by Laurie Colwin.`,
-      overview: `For the past two decades, Rocky has looked forward to her family’s yearly escape to Cape Cod. Their humble beach-town rental has been the site of sweet memories, sunny days, great meals, and messes of all kinds: emotional, marital, and—thanks to the cottage’s ancient plumbing—septic too. 
-This year’s vacation, with Rocky sandwiched between her half-grown kids and fully aging parents, promises to be just as delightful as summers past—except, perhaps, for Rocky’s hormonal bouts of rage and melancholy. (Hello, menopause!) Her body is changing—her life is, too. And then a chain of events sends Rocky into the past, reliving both the tenderness and sorrow of a handful of long-ago summers. 
-It's one precious week: everything is in balance; everything is in flux. And when Rocky comes face to face with her family’s history and future, she is forced to accept that she can no longer hide her secrets from the people she loves.`,
-      image: '',
-      publisher: 'HarperCollins',
-      publisher_date: new Date('2024-06-18T00:00:00').toLocaleDateString(),
-      pages: 240,
-      rank: 1508,
-      isbn13: 9780063345164,
-      format: 'hardcover',
-      price: 26.99,
-      category: ['fiction', 'family life'],
-      best_seller: true,
-      author_id: '6716582f8a7d5c2801dc43a2'
-    }
-  ]
+    let book1 = [
+      {
+        title: 'Intermezzo',
+        description: `An exquisitely moving story about grief, love, and family, from the global phenomenon Sally Rooney.`,
+        overview: `Aside from the fact that they are brothers, Peter and Ivan Koubek seem to have little in common. 
+Peter is a Dublin lawyer in his thirties—successful, competent, and apparently unassailable. But in the wake of their father's death, he's medicating himself to sleep and struggling to manage his relationships with two very different women—his enduring first love, Sylvia, and Naomi, a college student for whom life is one long joke. 
+Ivan is a twenty-two-year-old competitive chess player. He has always seen himself as socially awkward, a loner, the antithesis of his glib elder brother. Now, in the early weeks of his bereavement, Ivan meets Margaret, an older woman emerging from her own turbulent past, and their lives become rapidly and intensely intertwined. 
+For two grieving brothers and the people they love, this is a new interlude—a period of desire, despair, and possibility; a chance to find out how much one life might hold inside itself without breaking.`,
+        image: 'https://prodimage.images-bn.com/pimages/9780374608514_p0_v3_s1200x630.jpg',
+        publisher: 'Farrar, Straus and Giroux',
+        publisher_date: new Date('2024-09-24T00:00:00').toLocaleDateString(),
+        pages: 432,
+        rank: 199,
+        isbn13: 9780374608514,
+        format: 'eBook',
+        price: 26,
+        category: ['fiction'],
+        best_seller: true,
+        author_id: '671b8cfeffdc0abc75e828e1'
+      },
+      {
+        title: 'A Christmas Duet',
+        description: `“A perfectly delicious Christmas bonbon of a novel.”—Mary Kay Andrews, New York Times bestselling author of The Santa Suit and Bright Lights, Big Christmas`,
+        overview: `Hailey Morgan’s life has always revolved around music. She once had big dreams of becoming a professional songwriter, but the reality of life has led her to working as an assistant high school band teacher in Portland. As the holidays approach, Hailey dreads the annual tradition of spending Christmas with her family and dodging her mother’s meddling questions about her love life. 
+When Hailey’s close friend offers her the use of her family’s empty cabin for a rejuvenating solo holiday retreat, Hailey finally decides to do something to make herself happy. However, her arrival in the small town of Podunk, Oregon, is anything but peaceful when she discovers the cabin has been invaded by several wild animals. Luckily, Jay, the son of the town’s main store proprietor—and an incredibly handsome and charming former musician to boot—is more than willing to help. 
+Soon Hailey and Jay are nearly inseparable, chopping down and decorating a Christmas tree, sipping hot cocoa in front of a cozy fire, and best of all, playing music together. Jay’s positive feedback and encouragement inspire Hailey to believe she might succeed as a songwriter after all. But even in her snow-dusted oasis, family holiday drama still finds Hailey, interrupting and threatening her newfound peace and confidence. Meanwhile revelations from Jay present complications of their own. Suddenly her Christmas paradise has become a winter storm and Hailey must weather through the challenges to stand up for herself and embrace the holiday spirit.`,
+        image: 'https://m.media-amazon.com/images/I/81TBG7iAKsL._AC_UF1000,1000_QL80_.jpg',
+        publisher: 'Random House Publishing Group',
+        publisher_date: new Date('2024-10-15T00:00:00').toLocaleDateString(),
+        pages: 288,
+        rank: 83,
+        isbn13: 9780593725344,
+        format: 'eBook',
+        price: 9.99,
+        category: ['nonfiction', 'romance'],
+        best_seller: true,
+        author_id: '671b8cfeffdc0abc75e828e2'
+      },
+      {
+        title: 'The Bookshop: A History of the American Bookstore',
+        description: `An affectionate and engaging history of the American bookstore and its central place in American cultural life, from department stores to indies, from highbrow dealers trading in first editions to sidewalk vendors, and from chains to special-interest community destinations`,
+        overview: `Evan Friss’s history of the bookshop draws on oral histories, archival collections, municipal records, diaries, letters, and interviews with leading booksellers to offer a fascinating look at this institution beloved by so many. The story begins with Benjamin Franklin’s first bookstore in Philadelphia and takes us to a range of booksellers including the Strand, Chicago’s Marshall Field & Company, the Gotham Book Mart, specialty stores like Oscar Wilde and Drum and Spear, sidewalk sellers of used books, Barnes & Noble, Amazon Books, and Parnassus. The Bookshop is also a history of the leading figures in American bookselling, often impassioned eccentrics, and a history of how books have been marketed and sold over the course of more than two centuries—including, for example, a 3,000-pound elephant who signed books at Marshall Field’s in 1944.`,
+        image: 'https://m.media-amazon.com/images/I/81a1UWnv2bL._AC_UF1000,1000_QL80_.jpg',
+        publisher: 'Penguin Publishing Group',
+        publisher_date: new Date('2020-08-06T00:00:00').toLocaleDateString(),
+        pages: 416,
+        rank: 4056,
+        isbn13: 9780593299920,
+        format: 'hardcover',
+        price: 30,
+        category: ['fiction', 'history'],
+        best_seller: true,
+        author_id: '671b8cfeffdc0abc75e828e3'
+      }
+    ]
 
   await Book.insertMany(book1)
   console.log("Book Created")
