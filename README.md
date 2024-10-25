@@ -1,7 +1,7 @@
 # NoveltyNook
 **Welcome to Novelty Nook! Bookstore Application that allow users to browse through the store's collections of books. As well as creating their own library of books that they may be interested in.**
 
-![NoveltyNook](https://github.com/kpthanh01/characterQZ/blob/main/assets/screenshot1.png)
+![NoveltyNook](https://github.com/kpthanh01/NoveltyNook/blob/main/assets/screenshot1.png)
 
 ## How to Get Started
 1. When the application loads, you will be greated by our landing page
