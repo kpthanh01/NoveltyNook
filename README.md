@@ -3,6 +3,9 @@
 
 ![NoveltyNook](https://github.com/kpthanh01/NoveltyNook/blob/main/assets/screenshot1.png)
 
+## ERD
+![ERD](https://github.com/kpthanh01/NoveltyNook/blob/main/assets/erd.png)
+
 ## How to Get Started
 1. When the application loads, you will be greated by our landing page
    - Users can scroll down to check out sections such as 'Best Sellers' and events
