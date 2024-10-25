@@ -33,11 +33,10 @@
   </header>
   <main>
     <div class="account-options">
-      <b>Profile</b>
-      <b>Library</b>
-      <b>Events</b>
+      <b onclick="userProfile()">Profile</b>
+      <b onclick="userLibrary()">Library</b>
     </div>
-    <section class="container-fluid profile-container">
+    <section id="profile" class="container-fluid profile-container">
       <div class="profile-info">
         <div class="profile-labels">
           <label for="name">Name:</label>
@@ -59,7 +58,7 @@
       <button class="btn btn-primary" id="profile-edit" onclick="editProfile()">Edit</button>
       <button class="btn btn-primary" id="profile-save" onclick="updateProfile()">Update</button>
     </section>
-    <section class="container-fluid library-container">
+    <section id="library" class="container-fluid library-container">
 
     </section>
   </main>

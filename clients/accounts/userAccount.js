@@ -1,3 +1,6 @@
+const profile = document.querySelector('#profile')
+const library = document.querySelector('#library')
+
 const userName = document.querySelector('#nameText')
 const userAddress = document.querySelector('#addressText')
 const userEmail = document.querySelector('#emailText')
@@ -13,12 +16,13 @@ const profileInputs = document.querySelectorAll('.profile-input')
 const editBtn = document.querySelector('#profile-edit')
 const updateBtn = document.querySelector('#profile-save')
 
-const loadPage = async () => {
-  const name = sessionStorage.getItem('name')
-  const email = sessionStorage.getItem('email')
-  const phone = sessionStorage.getItem('phone')
-  const address = sessionStorage.getItem('address')
+const id = sessionStorage.getItem('id')
+const name = sessionStorage.getItem('name')
+const email = sessionStorage.getItem('email')
+const phone = sessionStorage.getItem('phone')
+const address = sessionStorage.getItem('address')
 
+const loadPage = async () => {
   userName.innerHTML = name
   inputName.value = name
   userAddress.innerHTML = address
@@ -27,6 +31,7 @@ const loadPage = async () => {
   inputEmail.value = email
   userPhone.innerHTML = phone
   inputPhone.value = phone
+  populateLibrary()
 }
 
 const editProfile = () => {
@@ -79,6 +84,33 @@ const updateProfile = async () => {
   } catch (error) {
     alert("An error has occurred")
   }
+}
+
+const populateLibrary = async () => {
+  let getLibrary = await axios.get(`http://localhost:3001/library/${id}`)
+  let books = getLibrary.data.books
+
+  console.log(books)
+
+  for (let i = 0; i < books.length; i++) {
+    let getBook = await axios.get(`http://localhost:3001/books/${books[i]}`)
+    console.log(getBook.data)
+    let bookCard = document.createElement('div')
+    bookCard.setAttribute('class', 'card')
+    bookCard.setAttribute('style', 'width: 18rem')
+    bookCard.innerHTML = `<img src="${getBook.data.image}" class="card-img-top" alt="">`
+    library.appendChild(bookCard)
+  }
+}
+
+const userProfile = () => {
+  profile.style.display = 'flex'
+  library.style.display = 'none'
+}
+
+const userLibrary = () => {
+  profile.style.display = 'none'
+  library.style.display = 'block'
 }
 
 loadPage()

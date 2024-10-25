@@ -21,13 +21,12 @@ const loadPage = async () => {
   if (userId) {
     loginBtn.style.display = 'none'
     myAccount.style.display = 'block'
+    let libraryResponse = await axios.get(`http://localhost:3001/library/${userId}`)
+    libraryData = libraryResponse.data
   }
 
   let bookResponse = await axios.get(`http://localhost:3001/books/${bookId}`)
   let authorResponse = await axios.get(`http://localhost:3001/authors/${bookResponse.data.author_id}`)
-  let libraryResponse = await axios.get(`http://localhost:3001/library/${userId}`)
-
-  libraryData = libraryResponse.data
 
   title.innerHTML = bookResponse.data.title
   author.innerHTML = authorResponse.data.name
@@ -44,13 +43,18 @@ const loadPage = async () => {
 }
 
 const addToLibrary = async () => {
-  let libraryArray = libraryData.books
-  if (!libraryArray.find(item => item == bookId)) {
-    libraryArray.push(bookId)
-    let addBook = await axios.put(`http://localhost:3001/library/${libraryData._id}`, { books: libraryArray })
+  if (userId) {
+    let libraryArray = libraryData.books
+    if (!libraryArray.find(item => item == bookId)) {
+      libraryArray.push(bookId)
+      let addBook = await axios.put(`http://localhost:3001/library/${libraryData._id}`, { books: libraryArray })
+    } else {
+      alert("This Book is already in the library")
+    }
   } else {
-    alert("This Book is already in the library")
+    alert('Please Login')
   }
+
 }
 
 const openLoginPage = () => {

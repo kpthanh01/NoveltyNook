@@ -21,6 +21,11 @@ main {
   margin-bottom: 4em;
 }
 
+b:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .profile-container {
   background-color: paleturquoise;
   display: flex;
@@ -28,6 +33,13 @@ main {
   width: 60%;
   padding: 2.5em;
   font-size: 23px;
+  border: solid 2px black;
+}
+
+.library-container {
+  background-color: paleturquoise;
+  width: 60%;
+  padding: 2.5em;
   border: solid 2px black;
 }
 
